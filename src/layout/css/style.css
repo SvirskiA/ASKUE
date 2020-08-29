@@ -1,0 +1,124 @@
+@font-face {
+    font-family: 'GOST 2.304-81 type A'; 
+    src: url('fonts/GOST 2.304-81 type A.ttf'); 
+   }
+
+* {	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-size: 21px;
+	font-family: 'GOST 2.304-81 type A', sans-serif;
+	color: black;   
+}
+
+.container {
+	width: 700px;
+	margin: auto;
+}
+
+header {
+	padding: 15px 0;
+	background: #48D1CC;
+	color:  white;
+	/*display: flex;
+	justify-content: space-between;
+	align-items: center;*/
+	color:  black;  
+}
+
+.main-input {
+	padding: 15px 0;
+	height: 423px;
+
+	background: #48D1CC;
+}
+h1 {
+	margin-bottom: 10px;
+}
+.main-form-input {
+	padding: 15px 0;
+	height: 200px;
+	background: #AFEEEE;
+}
+.links {
+	padding: 15px 0;
+	height: 269px;
+	background: #AFEEEE;
+}
+
+a {
+	text-decoration: none;	
+	color: #939393;
+	/*padding: 0 15px 40px 15px;*/
+}
+a:hover {
+	color: #00bac6;
+	border: #00bac6 2px solid;
+}
+
+
+select {
+	width: 150px;
+}
+
+.signature_input{
+	width: 95%;
+    display: inline-block;
+}
+
+.btn {
+width: 100%;
+height: 30px;
+background: #008B8B;
+color: white;
+border: none;
+border-radius: 5px;
+margin: 8px 0;
+}
+#main-input-form {
+	position: relative;
+}
+.btn-area {
+	width: 50%;
+	position: absolute;
+	right: 0;
+	top: 25px;
+}
+.btn-area-clear{
+	top: 337px;
+}
+h2 {
+	text-align: center;
+	padding-bottom: 10px;
+}
+.project-stage h3{
+	display: inline;
+	margin-right: 15px;
+}
+.project-stage span{
+	font-weight: bold;
+}
+.project-stage input{
+	margin-right: 15px;
+}
+.project-name, .project-stage, .project-peaple, .project-date {
+	padding-bottom: 10px;
+}
+#project-index {
+	width: 20%;
+}
+#project-name {
+	width: 79%;
+}
+.btn:hover, .input-btn:hover {
+	background:	#008C33;
+	border: #0b6603 solid 2px;
+}
+.btn-area-clear:hover {
+	background: #c45210;
+	border: #cf8d12 solid 2px;
+}
+
+#textarea{
+	width: 100%;
+}

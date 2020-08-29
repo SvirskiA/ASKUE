@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@500&display=swap" rel="stylesheet">
+    <title>Опросные на ЩУЭ</title>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <form action="index.html">
+                <button type="submit" class="btn">НА ГЛАВНУЮ</button>
+            </form>
+        </div>
+    </header>
+    <!-- 
+3,32 А,К,,СВ-95,ЩУЭ-2-1-1-1-У1
+66,32 А,,,СВ-110,ЩУЭ-2-1-1-1-У1
+88,32 А,К,,СВ-110,ЩУЭ-2-1-1-1-У1 
+1,32 А,16 А,,СВ-110,ЩУЭ-2-1-2-1-У1
+40,32 А,,,СВ-95,ЩУЭ-2-2-1-1-У1
+50,32 А,16 А,К,,СВ-95,ЩУЭ-2-2-2-1-У1
+22,32 А,16 А,,СВ-110,ЩУЭ-2-3-2-1-У1
+77,16 А,32 А,1фК,,СВ-110,ЩУЭ-2-3-2-1-У1
+-->
+    <div class="main-table">
+        <div class="container">
+            <div id="info_table_wrapper" class="hide_info_table_wrapper">
+                <legend>Перечень ЩУЭ</legend>
+                <table id="info_table" class="info_table">
+                    <thead>
+                        <tr>
+                            <th>Тип ЩУЭ</th>
+                            <th>Описание</th>
+                            <th>Кол-во</th>
+                        </tr>
+                    </thead>
+                    <tbody class="info_table_body">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="counters_n_breakers_container" id="counters_n_breakers_container">
+        <div class="container">
+            <form name="counters-input" method="post" action="#" id="counters-input">
+                <div class="input_page">
+                    <p>Введите № начальной страницы:</p>
+                    <input type="text" size="3" id="input_page" name="input_page">
+                </div>
+                <div class="counters_wrapper">
+                    <p>Введите тип 1-фазного счетчика:</p>
+                    <input type="text" size="15" id="counter-1f" name="counter-1f"
+                        value="CE208 S7.145.3. JPR.QSU VF LZ кл. т. 1, 230 В, 5(60) А, PLC, радио">
+                    <br>
+                    <p class="counter_note">или скопируйте (для Гран-Электро):</p>
+                    <p class="counter_note">CC-101-110B RFsE кл.т.1, 230 В, 5(60)А, RF (433 МГц)</p>
+                    <p>Введите тип 3-фазного счетчика:</p>
+                    <input type="text" size="15" id="counter-3f" name="counter-3f"
+                        value="CE318 S35.145.JPR QSU VMF LZ кл.т. 1, 3х230/400 В, 5(60) А, PLC, радио">
+                    <p class="counter_note">или скопируйте (для Гран-Электро):</p>
+                    <p class="counter_note">CC-301-10.3/U/1 /P ( A1 L+ ) K RFsE кл.т. 1, 3x230/400 В, 10(80)А, RF (433
+                        МГц)</p>
+                    <!-- <a href="https://www.strumen.com/ru/products/order-list/electro.html">Счетчики на сайте Гран-Системы</a>
+					<a href="http://www.energomera.by/products/pfzip">Счетчики на сайте Энергомеры</a> -->
+                </div>
+                <div class="brakers_wrapper" id="brakers_wrapper">
+                </div>
+                <input type="submit" value="Получить опросные листы" class="btn" id="get-order-lists">
+            </form>
+        </div>
+    </div>
+    <div class="order_container">
+        <div class="container">
+            <div class="order_sheet" id='order_sheet'>
+            </div>
+        </div>
+    </div>
+    <footer id="footer">
+        <div class="container">
+            <form action="sсheme_order_sheet.html">
+                <button type="submit" class="btn">Перейти к схемам</button>
+            </form>
+        </div>
+        
+    </footer>
+</body>
+
+</html>

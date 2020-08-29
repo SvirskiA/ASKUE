@@ -1,0 +1,127 @@
+<!-- real DOM -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@500&display=swap" rel="stylesheet">
+    <!-- нужен тут? -->
+    <title>ЩУЭ</title>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <form action="help.html">
+                <button type="submit" class="btn">HELP</button>
+            </form>
+        </div>
+    </header>
+    <div class="main-form-input">
+        <div class="container">
+            <form name="object-data-input" method="post" action="#" id="object-data-input">
+                <h2>Заполните форму:</h2>
+                <div class="project-stage">
+                    <h3>Стадия проекта:</h3>
+                    <label for="project-stage-c">Стадия <span>C</span></label>
+                    <input type="radio" name="project-stage" id="project-stage-c" value="C" checked>
+                    <label for="project-stage-a">Стадия <span>А</span></label>
+                    <input type="radio" name="project-stage" id="project-stage-a" value="A">
+                    <label for="project-stage-ppd">Стадия <span>ППД</span></label>
+                    <input type="radio" name="project-stage" id="project-stage-ppd" value="ППД">
+                </div>
+                <div class="project-name">
+                    <input type="text" size="15" id="project-index" placeholder="Введите ШИФР">
+                    <input type="text" size="50" id="project-name" placeholder="Введите название объекта">
+                </div>
+                <div class="project-peaple">
+                    <label for="gip">ГИП:</label>
+                    <select name="gip" id="gip">
+                        <option>Игнаткович А. С.</option>
+                        <option>Савко Ю. А.</option>
+                        <option>Высоцкий И. М.</option>
+                    </select>
+                    <label for="boss">Нач. отдела:</label>
+                    <select name="boss" id="boss">
+                        <option>Колик В. Р.</option>
+                        <option>Горовой В. В.</option>
+                        <option>Сапроненко В. В.</option>
+                    </select>
+                    <label for="boss">Разработчик:</label>
+                    <select name="developer" id="developer">
+                        <option>Свирский А. Е.</option>
+                        <option>Крапивина Т. С</option>
+                        <option>Гуринович Т. А.</option>
+                        <option>Сапроненко В. В.</option>
+                        <option>Идельчик Г. Р.</option>
+                        <option>Горовой В. В.</option>
+                        <option>Мышковец Е. Я.</option>
+                    </select>
+                </div>
+                <div class="signatures_wrapper">
+                    <input type="checkbox" id="developer_signature" name="developer_signature" checked>
+                    <label for="developer_signature" class="signature_input">Добавить подпись разработчика на чертежи</label>
+                    <input type="checkbox" id="boss_signature" name="boss_signature" checked>
+                    <label for="boss_signature" class="signature_input">Добавить подпись проверяющего на чертежи</label>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="main-input">
+        <div class="container">
+            <form name="main-input" method="get" action="#" id="main-input-form">
+            <h1>Введите исходные данные:</h1>
+            <textarea name="comment" rows="14" id="textarea">
+Количество,IНОМ_АВ1,IНОМ_АВ2,ТИП_ВВОДА,ТИП_ОПОРЫ,ТИП_ЩУЭ
+1,50 А,,,СВ-110,ЩУЭ-2-1-1-1-У1
+2,40 А,40 А,КК,СВ-110,ЩУЭ-2-2-2-1-У1
+3,63 А,50 А,,СВ-95,ЩУЭ-2-3-2-1-У1
+4,63 А,,К,СВ-110,ЩУЭ-2-1-1-1-У1
+5,50 А,,К,СВ-95,ЩУЭ-2-1-1-1-У1
+6,50 А,,,СВ-110,ЩУЭ-2-2-1-1-У1
+7,32 А,50 А,,СВ-95,ЩУЭ-2-3-2-1-У1
+            </textarea>
+            <!--
+    12,32 А,К,,СВ-95,ЩУЭ-2-1-1-1-У1
+    15,32 А,,,СВ-110,ЩУЭ-2-1-1-1-У1
+    137,32 А,,,СВ-95,ЩУЭ-2-1-1-1-У1
+    -->
+            <!-- <input type="submit" id="button" value="ВНЕСТИ ДАННЫЕ" class="btn btn-area"> -->
+            </form>
+
+        </div>
+        <div class="links">
+            <div class="container">
+                <form action="order_sheet.html">
+                <!-- <form> -->
+                    <button class="btn" id="submit-order" type="submit">Заполнить опросные листы</button>
+                </form>
+                <form action="#">
+                    <button class="btn" id="submit-works" type="submit">
+                        <!--Ведомости работ-->#</button>
+                </form>
+                <form action="#">
+                    <button class="btn" type="submit">
+                        <!--СО-->#</button>
+                </form>
+                <form action="#">
+                    <button class="btn" type="submit">
+                        <!--ПНР-->#</button>
+                </form>
+                <form action="#">
+                    <button class="btn">
+                        <!--Объёмы-->#</button>
+                </form>
+            </div>
+            <p style="text-align: center; font-size: 14px;">&copy;
+                <!-- Copyright--> 2019 Svirski Anton</p>
+        </div>
+
+        <div id="root"></div>
+
+        <!--   <img src="./img/music.svg" alt="#"> -->
+        <!-- <a href="category.html">category</a> -->
+<script type="text/javascript" src="main.bundle.js"></script></body>
+
+</html>
