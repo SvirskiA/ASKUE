@@ -91,8 +91,11 @@ function mainObjectCollect(str) {
 
 		if (this.counterCountInSEM === 1) {
 			this.fullDecription = `${this.SEMType} (${this.breaker1Value} А). ${this.description} Установка ${this.installation}. Опросный лист`;
+			this.decriptionForWorks = `${this.SEMType}. ${this.description} Установка ${this.installation}`;
 		} else if (this.counterCountInSEM === 2) {
 			this.fullDecription = `${this.SEMType} (${this.breaker1Value} А; ${this.breaker2Value} А). ${this.description} Установка ${this.installation}. Опросный лист`;
+			this.decriptionForWorks = `${this.SEMType}. ${this.description} Установка ${this.installation}`;
+
 		}
 	}
 

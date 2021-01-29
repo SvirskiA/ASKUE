@@ -345,10 +345,13 @@ font-size: 21px;
 }
 /*нумерация листов*/
 .input_page{
-background: #48D1CC;
+/* background: #48D1CC; */
 border: #008B8B solid 2px;
 border-radius: 5px;	
 padding-left: 40px;
+}
+.input_page p {
+  display: inline-block;
 }
 /*СЧЕТЧИКИ*/
 .counters_wrapper{
@@ -360,7 +363,7 @@ padding-left: 40px;
 }
 .input_page p,
 .counters_wrapper p{
-padding: 12px 0 2px 0;
+padding-top: 15px;
 }
 .counters_wrapper .counter_note {
 padding: 0;

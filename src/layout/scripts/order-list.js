@@ -2,18 +2,24 @@ import '../css/order-list.css';
 
 import mainObjectCollect from './data/main-object-collect';
 import addBreakersChoise from './for-order-list/add-breakers-choise';
-import createInfoTable from './for-order-list/create-info-table';
+import createInfoTable from './table-for-order_n_works/create-info-table';
 import contactsTable from './for-order-list/contacts-table';
 import createLegendOfOrderList from './for-order-list/legend-of-order-list';
 import createOrderTable from './for-order-list/create-order-table';
 import fillOrderTable from './for-order-list/fill-order-table';
 import addCipherTable from './cipher/add-cipher-table';
 import addAsideTable from './cipher/add-aside-table';
+import addFormat from './cipher/add-format';
 import addSumSem from './for-order-list/add-sum-sem';
 
 let userInput = localStorage.getItem("userInput");
 userInput = mainObjectCollect(userInput);
 console.log(userInput);
+
+// if (localStorage.getItem('userPageInput')) {
+//   const userPageInput = document.getElementById('input_page');
+//   userPageInput.value = localStorage.getItem('userPageInput');
+// }
 
 let projectData = JSON.parse(localStorage.getItem("projectData"));
 
@@ -49,18 +55,19 @@ let getOrderListsButton = document.getElementById('get-order-lists');
 getOrderListsButton.onclick = function (e) {
   e.preventDefault();
 
-  const breakersWrapper = document.getElementById('counters-input');
-  breakersWrapper.classList.add('hidden');
+  // const userPageInput = document.getElementById('input_page').value;
+  // localStorage.setItem("userPageInput", userPageInput);
+
+  const countersAndBreakersWrapper = document.getElementById('counters_n_breakers_container');
+  countersAndBreakersWrapper.classList.add('hide_counters_n_breakers_container');
 
   for (let i = 0; i < userInput.length; i += 1) {
-    const countersAndBreakersWrapper = document.getElementById('counters_n_breakers_container');
-    countersAndBreakersWrapper.classList.add('hide_counters_n_breakers_container');
 
     // add main table
     const infoTableWrapper = document.getElementById('info_table_wrapper');
     infoTableWrapper.classList.add('show_info_table_wrapper');
     const infoTable = document.querySelector('.info_table_body');
-    const rowForInfoTable = createInfoTable(userInput[i])
+    const rowForInfoTable = createInfoTable(userInput[i], true);
     infoTable.append(rowForInfoTable);
 
     // add wrapper
@@ -93,9 +100,11 @@ getOrderListsButton.onclick = function (e) {
     note.textContent = 'Дополнение: Щиток выносного учета должен соответствовать требованиям СТП 33243.20.262-17.';
     
     // add cipher in wrapper
-    a4div_frame.append(addCipherTable(projectData, userInput[i], i, userInput));
+    a4div_frame.append(addCipherTable(projectData,'290', 'order', userInput[i], i, userInput));
     // add aside frame in wrapper
     a4div_frame.append(addAsideTable());
+
+    a4div.append(addFormat('A4'));
   }
   for (let i = 0; i < userInput.length; i += 1) {
     fillOrderTable(userInput[i], i, arrCounterBreakers);
@@ -103,6 +112,16 @@ getOrderListsButton.onclick = function (e) {
 
   // add counters sum
   addSumSem(userInput);
-
-  
 }
+
+
+// const shemeBtn = document.getElementById('sсheme_order_sheet__wrapper');
+
+// shemeBtn.onclick = function(e) {
+//     e.preventDefault();
+
+//     const userPageInput = document.getElementById('input_page').value;
+//     localStorage.setItem("userPageInput", userPageInput);
+    
+//     location.href = 'sсheme_order_sheet.html';
+// }

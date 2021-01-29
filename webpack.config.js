@@ -7,7 +7,10 @@ module.exports = {
     entry: {
         main: './src/index.js',
         orderListEntry: './src/layout/scripts/order-list.js',
-        // statsEntry: './src/layout/scripts/stats.js'
+        shemesForOrderList: './src/layout/scripts/scheme_order.js',
+        scopeOfWorkEntry: './src/layout/scripts/scopeOfWork.js',
+        shemesForWorks: './src/layout/scripts/scheme_works.js',
+        estimate: './src/layout/scripts/estimate.js',
     },
     output: {
         path: path.resolve(__dirname, 'build', 'target'),
@@ -46,20 +49,35 @@ module.exports = {
     },
     watch: true,
     plugins: [
-        new HtmlWebpackPlugin({ 
+        new HtmlWebpackPlugin({
             template: './src/layout/index.html',
-            chunks: ['main'] 
+            chunks: ['main']
         }),
-        new HtmlWebpackPlugin({  // Also generate a cards.html
+        new HtmlWebpackPlugin({  // Also generate a order-list.html
             filename: 'order-list.html',
             template: './src/layout/order-list.html',
-            chunks: ['orderListEntry'] 
-          }),
-        //   new HtmlWebpackPlugin({  // Also generate a cards.html
-        //     filename: 'stats.html',
-        //     template: './src/layout/stats.html',
-        //     chunks: ['statsEntry'] 
-        //   }),
+            chunks: ['orderListEntry']
+        }),
+        new HtmlWebpackPlugin({  // Also generate a sсheme_order_sheet.html
+            filename: 'sсheme_order_sheet.html',
+            template: './src/layout/sсheme_order_sheet.html',
+            chunks: ['shemesForOrderList']
+        }),
+        new HtmlWebpackPlugin({  // Also generate a scopeOfWork.html
+            filename: 'scopeOfWork.html',
+            template: './src/layout/scopeOfWork.html',
+            chunks: ['scopeOfWorkEntry']
+        }),
+        new HtmlWebpackPlugin({  // Also generate a sсheme_works.html
+            filename: 'sсheme_works.html',
+            template: './src/layout/sсheme_works.html',
+            chunks: ['shemesForWorks']
+        }),
+        new HtmlWebpackPlugin({  // Also generate a estimate.html
+            filename: 'estimate.html',
+            template: './src/layout/estimate.html',
+            chunks: ['estimate']
+        }),
         new CopyPlugin([
             // { from: 'src/layout/audio', to: './audio' },
             { from: 'src/layout/img', to: './img' },

@@ -1,14 +1,15 @@
-import addPageNumber from './add-page-number';
+import { addOrderPageNumber,  addOrderShemePageNumber, addShemeScopeOfWorksPageNumber, addScopeOfWorksPageNumber} from './add-page-number';
 
-function addCipherTable(project, sem, index, mainObj) {
+function addCipherTable(project, subsection, typeOfPage, sem, index, mainObj, shemePages) {
 
 	console.log(mainObj)
 	const сipherTable = document.createElement("TABLE");
 	сipherTable.classList.add('сipher_table');
 
-	const body = document.createElement("TBODY");
-	сipherTable.append(body);
+	const tbody = document.createElement("TBODY");
+	сipherTable.append(tbody);
 	// строки
+	
 	const row_1 = document.createElement("TR");
 	const row_2 = document.createElement("TR");
 	const row_3 = document.createElement("TR");
@@ -20,8 +21,24 @@ function addCipherTable(project, sem, index, mainObj) {
 	const row_9 = document.createElement("TR");
 	const row_10 = document.createElement("TR");
 	const row_11 = document.createElement("TR");
+
+
 	// место где будут строки
-	body.append(row_1, row_2, row_3, row_4, row_5, row_6, row_7, row_8, row_9, row_10, row_11);
+	tbody.append(row_1, row_2, row_3, row_4, row_5, row_6, row_7, row_8, row_9, row_10, row_11);
+
+// const row1 = tbody[0];
+/*
+for (let i = 0; i < 11; i += 1) {
+	const row = document.createElement("TR");
+	tbody.append(row);
+for (let i = 0; i < 7; i += 1) {
+	const row = tbody.childNodes[0];
+	console.log(tbody.childNodes)
+	const td = document.createElement("TD");
+	row.append(td);
+}
+*/
+// console.log(row1)
 	// ячейки
 	const td1_1 = document.createElement("TD");
 	const td1_2 = document.createElement("TD");
@@ -135,8 +152,9 @@ function addCipherTable(project, sem, index, mainObj) {
 	row_10.append(td10_1, td10_2, td10_3, td10_4);
 	row_11.append(td11_1, td11_2, td11_3, td11_4);
 
+
 	// Наполняем ячейки
-	td1_7.innerHTML = `${project.cipher}-290-70-АУЭ`; //1.7
+	td1_7.innerHTML = `${project.cipher}-${subsection}-70-АУЭ`; //1.7
 
 	td3_7.innerHTML = project.nameOfProject; //3.7
 
@@ -168,30 +186,64 @@ function addCipherTable(project, sem, index, mainObj) {
 	td10_4.innerHTML = today;
 	td11_4.innerHTML = today;
 
-	td6_5.innerHTML = 'Задание заводу на изготовление шкафов АСКУЭ'; //6.5
+	
+	if (typeOfPage === 'order' || typeOfPage === 'orderSheme') {
+		td6_5.innerHTML = 'Задание заводу на изготовление шкафов АСКУЭ'; //6.5
+	} else if (typeOfPage === 'works' || typeOfPage === 'worksSheme') {
+		td6_5.innerHTML = 'Электрические сети 0,4-10 кВ. АСКУЭ'; //6.5
+	}
 	td6_6.innerHTML = 'Стадия'; //6.6
 	td6_7.innerHTML = 'Лист'; //6.7
 	td6_8.innerHTML = 'Листов'; //6.8
 
 	td7_5.innerHTML = project.stageOfProject;			// 7.5
-	td7_6.textContent = addPageNumber(index, sem, mainObj)
 
-	td9_1.innerHTML = 'Н. контр.'; //9.1
-	td9_2.innerHTML = 'Горовой';
+	if (typeOfPage === 'order') {
+		td7_6.textContent = addOrderPageNumber(index, sem, mainObj);
+	} else if (typeOfPage === 'orderSheme') {
+		td7_6.textContent = addOrderShemePageNumber(index, shemePages);
+
+		// исправить ниже, чтоб отличалась нумерация
+	} else if (typeOfPage === 'works') {
+		td7_6.textContent = addScopeOfWorksPageNumber(index, shemePages);
+	} else if (typeOfPage === 'worksSheme') {
+		td7_6.textContent = addShemeScopeOfWorksPageNumber(index);
+	}
+	
+	td9_1.textContent = 'Н. контр.'; //9.1
+	td9_2.textContent = 'Свирский';
 
 	if (project.isBossSignature){
 		const bossSignature = document.createElement("IMG");
 		const bossSignature2 = document.createElement("IMG");
 		bossSignature.classList.add('signature_boss');
 		bossSignature2.classList.add('signature_boss2');
-		bossSignature.setAttribute('src', './img/idelchik.png');
-		bossSignature2.setAttribute('src', './img/idelchik.png');
+		bossSignature.setAttribute('src', './img/svirski3.png');
+		bossSignature2.setAttribute('src', './img/svirski3.png');
 		td9_3.append(bossSignature);
 		td10_3.append(bossSignature2);
 	}
 
-	console.log(project)
-	td9_5.innerHTML = sem.fullDecription; //9.5
+	// console.log(project);
+
+	if (typeOfPage === 'order') {
+		td9_5.textContent = sem.fullDecription; //9.5
+	} else if (typeOfPage === 'orderSheme' || typeOfPage === 'worksSheme') {
+		if (sem.SEMType.split('-')[2] === '1' && sem.SEMType.split('-')[3] === '1') {
+			td9_5.textContent = 'Щиток учета с однофазным вводом. Схема электрическая принципиальная'; //9.5
+		} else if (sem.SEMType.split('-')[2] === '1' && sem.SEMType.split('-')[3] === '2') {
+			td9_5.textContent = 'Щиток учета с двумя однофазными вводами. Схема электрическая принципиальная'; //9.5
+		} else if (sem.SEMType.split('-')[2] === '2' && sem.SEMType.split('-')[3] === '1') {
+			td9_5.textContent = 'Щиток учета с трехфазным вводом. Схема электрическая принципиальная'; //9.5
+		} else if (sem.SEMType.split('-')[2] === '2' && sem.SEMType.split('-')[3] === '2') {
+			td9_5.textContent = 'Щиток учета с двумя трехфазными вводами. Схема электрическая принципиальная'; //9.5
+		} else if (sem.SEMType.split('-')[2] === '3' && sem.SEMType.split('-')[3] === '2') {
+			td9_5.textContent = 'Щиток учета с трехфазным и однофазным вводом. Схема электрическая принципиальная'; //9.5
+		}
+	} else if (typeOfPage === 'works') {
+		td9_5.textContent = `${sem.decriptionForWorks}. Ведомость объемов строительных и монтажных работ по установке`; //9.5
+	} 
+
 
 	const p_besp = document.createElement("P");
 	p_besp.classList.add('p_besp');
@@ -205,7 +257,7 @@ function addCipherTable(project, sem, index, mainObj) {
 	/*	td9_6.innerHTML = 'РУП "Белэнергосетьпроект"'; //9.6*/
 
 	td10_1.innerHTML = 'Проверил'; //10.1
-	td10_2.innerHTML = 'Горовой'; //10.2
+	td10_2.innerHTML = 'Свирский'; //10.2
 
 	td11_1.innerHTML = 'Разраб.'; //11.1
 	td11_2.innerHTML = project.nameOfDeveloper.split(' ')[0]; //11.2

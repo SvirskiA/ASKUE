@@ -1,8 +1,7 @@
 @font-face {
     font-family: 'GOST 2.304-81 type A'; 
     src: url('fonts/GOST 2.304-81 type A.ttf'); 
-   }
-
+}
 * {	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
@@ -10,26 +9,42 @@
 	font-family: 'GOST 2.304-81 type A', sans-serif;
 	color: black;   
 }
-
 .container {
 	width: 700px;
 	margin: auto;
 }
-
 header {
 	padding: 15px 0;
 	background: #48D1CC;
 	color:  white;
-	/*display: flex;
-	justify-content: space-between;
-	align-items: center;*/
 	color:  black;  
 }
-
+.btn-container {
+	display: flex;
+	justify-content: right;
+	border: #008B8B solid 2px;
+	border-radius: 5px;
+	margin-bottom: -2px;
+}
+.input_page__form {
+	width: 25%;
+	display: flex;
+	align-items: center;
+}
+#input_page_works,
+#input_page {
+    text-align: center;
+}
+.input_page p {
+	display: inline;
+}
+.btn-form {
+	width: 36%;
+	padding-right: 5px;
+}
 .main-input {
 	padding: 15px 0;
 	height: 423px;
-
 	background: #48D1CC;
 }
 h1 {
@@ -45,7 +60,6 @@ h1 {
 	height: 269px;
 	background: #AFEEEE;
 }
-
 a {
 	text-decoration: none;	
 	color: #939393;
@@ -55,17 +69,13 @@ a:hover {
 	color: #00bac6;
 	border: #00bac6 2px solid;
 }
-
-
 select {
 	width: 150px;
 }
-
 .signature_input{
 	width: 95%;
     display: inline-block;
 }
-
 .btn {
 width: 100%;
 height: 30px;
@@ -77,6 +87,12 @@ margin: 8px 0;
 }
 #main-input-form {
 	position: relative;
+}
+.btn-big {
+	height: 50px;
+}
+.btn-small {
+	height: 30px;
 }
 .btn-area {
 	width: 50%;
@@ -101,7 +117,10 @@ h2 {
 .project-stage input{
 	margin-right: 15px;
 }
-.project-name, .project-stage, .project-peaple, .project-date {
+.project-name, 
+.project-stage, 
+.project-peaple, 
+.project-date {
 	padding-bottom: 10px;
 }
 #project-index {
@@ -110,7 +129,8 @@ h2 {
 #project-name {
 	width: 79%;
 }
-.btn:hover, .input-btn:hover {
+.btn:hover, 
+.input-btn:hover {
 	background:	#008C33;
 	border: #0b6603 solid 2px;
 }
@@ -118,7 +138,6 @@ h2 {
 	background: #c45210;
 	border: #cf8d12 solid 2px;
 }
-
 #textarea{
 	width: 100%;
 }

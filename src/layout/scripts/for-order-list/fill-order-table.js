@@ -149,7 +149,9 @@ function fillOrderTable(sem, index, arrayOfPhasesAndAmperes) {
 	createSquare(1, 0, '3ф кабельная, 1ф воздушная'),
 	createSquare(1, 0, '1 кабельная, 1 воздушная'));
 
-	if (sem.inputFromSem.toLowerCase() === 'в' || sem.inputFromSem.toLowerCase() === 'вв') {
+	if (sem.SEMType.split('-')[4] === '2') {
+		td7_3.childNodes[2].childNodes[0].classList.add('square_checked');
+	} else if (sem.inputFromSem.toLowerCase() === 'в' || sem.inputFromSem.toLowerCase() === 'вв') {
 		td7_3.childNodes[0].childNodes[0].classList.add('square_checked');
 	} else if (sem.inputFromSem.toLowerCase() === '1фк') {
 		td7_3.childNodes[1].childNodes[0].classList.add('square_checked');

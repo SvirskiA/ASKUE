@@ -14,7 +14,7 @@
     <header>
         <div class="container">
             <form action="help.html">
-                <button type="submit" class="btn">HELP</button>
+                <button type="submit" class="btn">HELP (в разработке)</button>
             </form>
         </div>
     </header>
@@ -39,13 +39,14 @@
                     <label for="gip">ГИП:</label>
                     <select name="gip" id="gip">
                         <option>Игнаткович А. С.</option>
-                        <option>Савко Ю. А.</option>
                         <option>Высоцкий И. М.</option>
+                        <option>Недобега К. И.</option>
+                        <option>Уласовец Р. И.</option>
                     </select>
                     <label for="boss">Нач. отдела:</label>
                     <select name="boss" id="boss">
                         <option>Колик В. Р.</option>
-                        <option>Горовой В. В.</option>
+                        <option>Серемяжко А. В.</option>
                         <option>Сапроненко В. В.</option>
                     </select>
                     <label for="boss">Разработчик:</label>
@@ -93,26 +94,63 @@
         </div>
         <div class="links">
             <div class="container">
-                <form action="order_sheet.html">
-                <!-- <form> -->
-                    <button class="btn" id="submit-order" type="submit">Заполнить опросные листы</button>
-                </form>
-                <form action="#">
-                    <button class="btn" id="submit-works" type="submit">
-                        <!--Ведомости работ-->#</button>
-                </form>
+                <div class="btn-container">
+                    <form class="input_page__form">
+                        <div class="input_page">
+                            <p>Введите № начальной страницы:</p>
+                            <input type="text" size="3" id="input_page" name="input_page">
+                        </div>
+                    </form>
+                    <form class="btn-form">
+                        <button class="btn btn-big" id="submit-order-shemes" type="submit">Схемы ЩУЭ к опросным листам (-290 часть проекта)</button>
+                    </form>
+                    <form class="btn-form">
+                        <button class="btn btn-big" id="submit-order" type="submit">Опросные листы на ЩУЭ</button>
+                    </form>
+                </div>
+
+                <div class="btn-container">
+                    <form class="input_page__form">
+                        <div class="input_page">
+                            <p>Введите № начальной страницы:</p>
+                            <input type="text" size="3" id="input_page_works" name="input_page">
+                        </div>
+                    </form>
+                    <form class="btn-form">
+                        <button class="btn btn-big" id="submit-works-shemes" type="submit">Схемы ЩУЭ (-103 часть проекта)</button>
+                    </form>
+                    <form class="btn-form">
+                        <button class="btn btn-big" id="submit-works" type="submit">Ведомости работ</button>
+                    </form>
+                </div>
+
+                <div class="btn-container">
+                    <!-- <form class="input_page__form">
+                        <div class="input_page">
+                            <p>Введите № начальной страницы:</p>
+                            <input type="text" size="3" id="input_page_works" name="input_page">
+                        </div>
+                    </form> -->
+                    <form class="btn-form">
+                        <button class="btn btn-small" id="submit-estimate" type="submit">Задание в ОСиОС (объёмы)</button>
+                    </form>
+                    <form class="btn-form">
+                        <button class="btn btn-small" id="submit-specification" type="submit">спецификация (в разработке)</button>
+                    </form>
+                </div>
+<!-- 
+                <form>
+                    <button class="btn" id="submit-works" type="submit">Ведомости работ / Схемы ЩУЭ (-103 часть проекта)</button>
+                </form> -->
+
                 <form action="#">
                     <button class="btn" type="submit">
-                        <!--СО-->#</button>
+                        <!--ПНР (задание + ведомости)-->#</button>
                 </form>
-                <form action="#">
-                    <button class="btn" type="submit">
-                        <!--ПНР-->#</button>
-                </form>
-                <form action="#">
+                <!-- <form action="#">
                     <button class="btn">
-                        <!--Объёмы-->#</button>
-                </form>
+                        </button>
+                </form> -->
             </div>
             <p style="text-align: center; font-size: 14px;">&copy;
                 <!-- Copyright--> 2019 Svirski Anton</p>
