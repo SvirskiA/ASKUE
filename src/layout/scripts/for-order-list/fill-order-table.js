@@ -158,9 +158,9 @@ function fillOrderTable(sem, index, arrayOfPhasesAndAmperes) {
 	} else if (sem.inputFromSem.toLowerCase() === 'к' || sem.inputFromSem.toLowerCase() === 'кк') {
 		td7_3.childNodes[2].childNodes[0].classList.add('square_checked');
 	} else if (sem.inputFromSem.toLowerCase() === '3фк') {
-		td7_3.childNodes[2].childNodes[0].classList.add('square_checked');
+		td7_3.childNodes[3].childNodes[0].classList.add('square_checked');
 	} else if (sem.inputFromSem.toLowerCase() === 'вк' || sem.inputFromSem.toLowerCase() === 'кв') {
-		td7_3.childNodes[2].childNodes[0].classList.add('square_checked');
+		td7_3.childNodes[4].childNodes[0].classList.add('square_checked');
 	} else {
 		alert(`что-то не то с типом отходящей в ${sem}. Проверяйте ${sem.inputFromSem}`);
 	}

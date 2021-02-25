@@ -168,7 +168,7 @@ let workTable = function (sem) {
             collectedDataFromSem.purchase_wire_with_2_percent.toFixed(2)));
     }
     if (collectedDataFromSem.purchase_n_montage_INside_sleeve_4) {
-        bodyOfWorkTable.append(createRow('Приобретение и монтаж муфт внутренней установки типа 4ПБКВттп (16-25)-1', 'м',
+        bodyOfWorkTable.append(createRow('Приобретение и монтаж муфт внутренней установки типа 4ПБКВттп (16-25)-1', 'шт.',
             collectedDataFromSem.purchase_n_montage_INside_sleeve_4));
     }
     if (collectedDataFromSem.purchase_n_montage_OUTside_sleeve_4) {
