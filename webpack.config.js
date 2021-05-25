@@ -11,6 +11,7 @@ module.exports = {
         scopeOfWorkEntry: './src/layout/scripts/scopeOfWork.js',
         shemesForWorks: './src/layout/scripts/scheme_works.js',
         estimate: './src/layout/scripts/estimate.js',
+        worksTable: './src/layout/scripts/works_table.js',
     },
     output: {
         path: path.resolve(__dirname, 'build', 'target'),
@@ -77,6 +78,11 @@ module.exports = {
             filename: 'estimate.html',
             template: './src/layout/estimate.html',
             chunks: ['estimate']
+        }),
+        new HtmlWebpackPlugin({  // Also generate a works_table.html
+            filename: 'works_table.html',
+            template: './src/layout/works_table.html',
+            chunks: ['worksTable']
         }),
         new CopyPlugin([
             // { from: 'src/layout/audio', to: './audio' },

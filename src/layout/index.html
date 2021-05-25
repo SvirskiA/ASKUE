@@ -52,17 +52,18 @@
                     <label for="boss">Разработчик:</label>
                     <select name="developer" id="developer">
                         <option>Свирский А. Е.</option>
-                        <option>Крапивина Т. С</option>
+                        <option>Мышковец Е. Я.</option>
+                        <option>Савченко А. А.</option>
                         <option>Гуринович Т. А.</option>
                         <option>Сапроненко В. В.</option>
                         <option>Идельчик Г. Р.</option>
                         <option>Горовой В. В.</option>
-                        <option>Мышковец Е. Я.</option>
                     </select>
                 </div>
                 <div class="signatures_wrapper">
                     <input type="checkbox" id="developer_signature" name="developer_signature" checked>
-                    <label for="developer_signature" class="signature_input">Добавить подпись разработчика на чертежи</label>
+                    <label for="developer_signature" class="signature_input">Добавить подпись разработчика на
+                        чертежи</label>
                     <input type="checkbox" id="boss_signature" name="boss_signature" checked>
                     <label for="boss_signature" class="signature_input">Добавить подпись проверяющего на чертежи</label>
                 </div>
@@ -72,8 +73,8 @@
     <div class="main-input">
         <div class="container">
             <form name="main-input" method="get" action="#" id="main-input-form">
-            <h1>Введите исходные данные:</h1>
-            <textarea name="comment" rows="14" id="textarea">
+                <h1>Введите исходные данные:</h1>
+                <textarea name="comment" rows="14" id="textarea">
 Количество,IНОМ_АВ1,IНОМ_АВ2,ТИП_ВВОДА,ТИП_ОПОРЫ,ТИП_ЩУЭ
 1,50 А,,,СВ-110,ЩУЭ-2-1-1-1-У1
 2,40 А,40 А,КК,СВ-110,ЩУЭ-2-2-2-1-У1
@@ -83,12 +84,12 @@
 6,50 А,,,СВ-110,ЩУЭ-2-2-1-1-У1
 7,32 А,50 А,,СВ-95,ЩУЭ-2-3-2-1-У1
             </textarea>
-            <!--
+                <!--
     12,32 А,К,,СВ-95,ЩУЭ-2-1-1-1-У1
     15,32 А,,,СВ-110,ЩУЭ-2-1-1-1-У1
     137,32 А,,,СВ-95,ЩУЭ-2-1-1-1-У1
     -->
-            <!-- <input type="submit" id="button" value="ВНЕСТИ ДАННЫЕ" class="btn btn-area"> -->
+                <!-- <input type="submit" id="button" value="ВНЕСТИ ДАННЫЕ" class="btn btn-area"> -->
             </form>
 
         </div>
@@ -102,7 +103,8 @@
                         </div>
                     </form>
                     <form class="btn-form">
-                        <button class="btn btn-big" id="submit-order-shemes" type="submit">Схемы ЩУЭ к опросным листам (-290 часть проекта)</button>
+                        <button class="btn btn-big" id="submit-order-shemes" type="submit">Схемы ЩУЭ к опросным листам
+                            (-290 часть проекта)</button>
                     </form>
                     <form class="btn-form">
                         <button class="btn btn-big" id="submit-order" type="submit">Опросные листы на ЩУЭ</button>
@@ -117,7 +119,8 @@
                         </div>
                     </form>
                     <form class="btn-form">
-                        <button class="btn btn-big" id="submit-works-shemes" type="submit">Схемы ЩУЭ (-103 часть проекта)</button>
+                        <button class="btn btn-big" id="submit-works-shemes" type="submit">Схемы ЩУЭ (-103 часть
+                            проекта)</button>
                     </form>
                     <form class="btn-form">
                         <button class="btn btn-big" id="submit-works" type="submit">Ведомости работ</button>
@@ -125,41 +128,34 @@
                 </div>
 
                 <div class="btn-container">
-                    <!-- <form class="input_page__form">
-                        <div class="input_page">
-                            <p>Введите № начальной страницы:</p>
-                            <input type="text" size="3" id="input_page_works" name="input_page">
-                        </div>
-                    </form> -->
                     <form class="btn-form">
-                        <button class="btn btn-small" id="submit-estimate" type="submit">Задание в ОСиОС (объёмы)</button>
+                        <button class="btn btn-small" id="submit-estimate" type="submit">Задание в ОСиОС
+                            (объёмы)</button>
                     </form>
                     <form class="btn-form">
-                        <button class="btn btn-small" id="submit-specification" type="submit">спецификация (в разработке)</button>
+                        <button class="btn btn-small" id="submit-specification" type="submit">спецификация (в
+                            разработке)</button>
                     </form>
                 </div>
-<!-- 
-                <form>
-                    <button class="btn" id="submit-works" type="submit">Ведомости работ / Схемы ЩУЭ (-103 часть проекта)</button>
-                </form> -->
+                <div class="btn-container">
+                    <form class="btn-form">
+                        <button class="btn btn-big" id="submit-estimate" type="submit">Задание в ОСиОС (ПНР) (в
+                            разработке)</button>
+                    </form>
+                    <form class="btn-form">
+                        <button class="btn btn-big" id="submit-specification" type="submit">Ведомости ПНР (-103 часть
+                            проекта) (в разработке)</button>
+                    </form>
+                </div>
 
-                <form action="#">
-                    <button class="btn" type="submit">
-                        <!--ПНР (задание + ведомости)-->#</button>
-                </form>
-                <!-- <form action="#">
-                    <button class="btn">
-                        </button>
-                </form> -->
+                <p style="text-align: center; font-size: 14px;">&copy;
+                    <!-- Copyright--> 2019 Svirski Anton</p>
             </div>
-            <p style="text-align: center; font-size: 14px;">&copy;
-                <!-- Copyright--> 2019 Svirski Anton</p>
-        </div>
 
-        <div id="root"></div>
+            <div id="root"></div>
 
-        <!--   <img src="./img/music.svg" alt="#"> -->
-        <!-- <a href="category.html">category</a> -->
+            <!--   <img src="./img/music.svg" alt="#"> -->
+            <!-- <a href="category.html">category</a> -->
 </body>
 
 </html>

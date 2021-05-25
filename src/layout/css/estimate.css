@@ -1,0 +1,158 @@
+﻿@font-face {
+    font-family: 'GOST 2.304-81 type A'; 
+    src: url('fonts/GOST 2.304-81 type A.ttf'); 
+}
+@media print {
+    /* здесь будут стили для печати */
+	header, 
+	.main-table,
+	.counters_n_breakers_container,
+	footer {
+		display: none !important;
+	}
+	.a4_div {
+		page-break-after: always !important;
+		break-after: always !important;
+		float: none !important; 
+		/*border: none !important; */
+	} 
+
+
+	
+	@page {
+		size: auto;  
+		margin: 0;  
+	}
+
+}
+* {	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+
+	font-family: 'GOST 2.304-81 type A', sans-serif;
+	color: black; 
+}
+h6 {
+	height: 1px;
+}
+.container {
+	width: 210mm;
+	margin: auto;
+	/* background: url('/img/0001.jpg'); */
+}
+
+header,
+footer {
+	padding: 15px 0;
+	background: #48D1CC;
+	color:  white;
+}
+/* КНОПКИ */
+.btn {
+	width: 100%;
+	height: 30px;
+	background: #008B8B;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	margin: 5px 0;
+	font-size: 21px;;
+}
+/* .btn:last-child{
+	margin: 20px 0;
+} */
+.btn:hover, .input-btn:hover {
+	background:	#008C33;
+	border: #0b6603 solid 2px;
+}
+
+/*КОНТЕЙНЕРЫ ДЛЯ ОПРОСНЫХ*/
+.order_container {
+	background: #AFEEEE;
+}
+.a4_div {
+	height: 296.5mm;
+	display: block;
+	border: 1px solid black;
+	position: relative;
+	background: #d0ecec
+}
+.a4_div_frame {
+	font-size: 11.5pt;
+	height: 287mm;
+	width: 185mm;
+	left: 20mm;
+	bottom: 5mm;
+	border: 0.6mm solid black;
+	position: absolute;	
+	display: block; /*del*/
+}
+
+/*ТАБЛИЦЫ, общие свойства*/
+table {
+	border-collapse: collapse;
+}
+td, th {
+	border: 0.25mm solid #000;
+}
+tbody {
+	background: #e3f8ea;
+}
+tr:nth-child(2n), thead {
+	background: #fff;
+}
+tr:nth-child(2n-1), thead {
+	background: #e3f8ea;
+}
+
+/*ТАБЛИЦА*/
+.works_table {
+	width: 100%;
+}
+.works_table td:nth-child(1) {
+	width: 150mm;
+	text-align: left;
+	border-left: none;
+	padding-left: 1mm;
+}
+.works_table td:nth-child(2n+1) {
+	height: 5.5mm;
+}
+.works_table td:nth-child(2) {
+	width: 10mm;
+	text-align: center;
+	border-left: #000 solid 0.6mm;
+	border-right: #000 solid 0.6mm;
+}
+.works_table td:last-child {
+	text-align: right;
+	border-right: none;
+	padding-right: 15px;
+}
+.works_table tr:first-child td {
+	text-align: center;
+	height: 8mm;
+	padding: 0;
+	border-bottom: #000 solid 0.6mm;
+	border-top: none;
+}
+
+
+.signature{
+	max-width: 65px;
+	max-height: 33px;
+	bottom: -7px;
+	position: absolute;
+}
+.signature_boss {
+	max-width: 65px;
+	max-height: 33px;
+	bottom: 15px;
+	position: absolute;
+}
+.signature_boss2 {
+	max-width: 65px;
+	max-height: 33px;
+	bottom: 33px;
+	position: absolute;
+}

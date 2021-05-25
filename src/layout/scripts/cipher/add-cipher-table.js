@@ -268,11 +268,17 @@ for (let i = 0; i < 7; i += 1) {
 		if (project.nameOfDeveloper === "Крапивина Т. С") {
 			developerSignature.setAttribute('src', './img/krapivina.png');
 		} else if (project.nameOfDeveloper === "Свирский А. Е.") {
-			developerSignature.setAttribute('src', './img/svirski3.png');
+			developerSignature.setAttribute('src', './img/svirski.png');
 		} else if (project.nameOfDeveloper === "Идельчик Г. Р.") {
 			developerSignature.setAttribute('src', './img/idelchik.png');
+		} else if (project.nameOfDeveloper === "Савченко А. А.") {
+			developerSignature.setAttribute('src', './img/sava.png');
+		} else if (project.nameOfDeveloper === "Сапроненко В. В.") {
+			developerSignature.setAttribute('src', './img/sapr.png');
+		} else if (project.nameOfDeveloper === "Мышковец Е. Я.") {
+			developerSignature.setAttribute('src', './img/misk.png');
 		} else {
-			developerSignature.setAttribute('src', './img/svirski3.png');
+			developerSignature.setAttribute('src', './img/svirski.png');
 		}
 		td11_3.append(developerSignature);
 	}

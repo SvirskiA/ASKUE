@@ -151,15 +151,15 @@ function fillOrderTable(sem, index, arrayOfPhasesAndAmperes) {
 
 	if (sem.SEMType.split('-')[4] === '2') {
 		td7_3.childNodes[2].childNodes[0].classList.add('square_checked');
-	} else if (sem.inputFromSem.toLowerCase() === 'в' || sem.inputFromSem.toLowerCase() === 'вв') {
+	} else if (sem.inputFromSem === 'в' || sem.inputFromSem === 'вв') {
 		td7_3.childNodes[0].childNodes[0].classList.add('square_checked');
-	} else if (sem.inputFromSem.toLowerCase() === '1фк') {
+	} else if (sem.inputFromSem === '1фк') {
 		td7_3.childNodes[1].childNodes[0].classList.add('square_checked');
-	} else if (sem.inputFromSem.toLowerCase() === 'к' || sem.inputFromSem.toLowerCase() === 'кк') {
+	} else if (sem.inputFromSem === 'к' || sem.inputFromSem === 'кк') {
 		td7_3.childNodes[2].childNodes[0].classList.add('square_checked');
-	} else if (sem.inputFromSem.toLowerCase() === '3фк') {
+	} else if (sem.inputFromSem === '3фк') {
 		td7_3.childNodes[3].childNodes[0].classList.add('square_checked');
-	} else if (sem.inputFromSem.toLowerCase() === 'вк' || sem.inputFromSem.toLowerCase() === 'кв') {
+	} else if (sem.inputFromSem === 'вк' || sem.inputFromSem === 'кв') {
 		td7_3.childNodes[4].childNodes[0].classList.add('square_checked');
 	} else {
 		alert(`что-то не то с типом отходящей в ${sem}. Проверяйте ${sem.inputFromSem}`);
@@ -244,8 +244,11 @@ function fillOrderTable(sem, index, arrayOfPhasesAndAmperes) {
 
 	let td12_3 = findTd(index, 11, 2);
 	td12_3.append(createP ('-установка на железобетонной опоре:'), 
-	createSquare(0, 0, 'к опоре СВ-95'), 
-	createSquare(0, 0, 'к опоре СВ-110'),
+	createSquare(1, 1, 'к опоре СВ-95'), 
+	
+	createSquare(1, 1, 'к опоре СТ-108.6'), 
+	createSquare(1, 1, 'к опоре СВ-110'),
+	createSquare(1, 1, 'к опоре СТ-108.7'),
 	createP ('-установка на выносной стойке:'),
 	createSquare(0, 0, 'к выносной стойке'),
 	createP ('-установка на внешней стене здания:'),
@@ -253,16 +256,20 @@ function fillOrderTable(sem, index, arrayOfPhasesAndAmperes) {
 	createP ('-установка на железобетонной приставке ПТ43-2:'),
 	createSquare(0, 0, 'к приставке ПТ43-2 (только воздушный ввод)'));
 
-	if (sem.SEMType.split('-')[4] === '1' && sem.pillarType.toLowerCase() == 'св-95') {
+	if (sem.SEMType.split('-')[4] === '1' && sem.pillarType == 'св-95') {
 		td12_3.childNodes[1].childNodes[0].classList.add('square_checked');
-	} else if (sem.SEMType.split('-')[4] === '1' && sem.pillarType.toLowerCase() == 'св-110') {
+	} else if (sem.SEMType.split('-')[4] === '1' && sem.pillarType == 'ст-108.6') {
 		td12_3.childNodes[2].childNodes[0].classList.add('square_checked');
-	} else if (sem.SEMType.split('-')[4] === '2') {
+	} else if (sem.SEMType.split('-')[4] === '1' && sem.pillarType == 'св-110') {
+		td12_3.childNodes[3].childNodes[0].classList.add('square_checked');
+	} else if (sem.SEMType.split('-')[4] === '1' && sem.pillarType == 'ст-108.7') {
 		td12_3.childNodes[4].childNodes[0].classList.add('square_checked');
-	} else if (sem.SEMType.split('-')[4] === '3') {
+	} else if (sem.SEMType.split('-')[4] === '2') {
 		td12_3.childNodes[6].childNodes[0].classList.add('square_checked');
-	} else if (sem.SEMType.split('-')[4] === '4') {
+	} else if (sem.SEMType.split('-')[4] === '3') {
 		td12_3.childNodes[8].childNodes[0].classList.add('square_checked');
+	} else if (sem.SEMType.split('-')[4] === '4') {
+		td12_3.childNodes[10].childNodes[0].classList.add('square_checked');
 	}
 
 }
