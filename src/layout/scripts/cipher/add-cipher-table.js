@@ -218,8 +218,8 @@ for (let i = 0; i < 7; i += 1) {
 		const bossSignature2 = document.createElement("IMG");
 		bossSignature.classList.add('signature_boss');
 		bossSignature2.classList.add('signature_boss2');
-		bossSignature.setAttribute('src', './img/svirski3.png');
-		bossSignature2.setAttribute('src', './img/svirski3.png');
+		bossSignature.setAttribute('src', './img/svirski.png');
+		bossSignature2.setAttribute('src', './img/svirski.png');
 		td9_3.append(bossSignature);
 		td10_3.append(bossSignature2);
 	}

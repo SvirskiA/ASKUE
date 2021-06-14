@@ -255,7 +255,7 @@ if (purchase_wire_with_2_percent) {
         purchase_wire_with_2_percent.toFixed(2)));
 }
 if (purchase_n_montage_INside_sleeve_4) {
-    table.append(createRow('Приобретение и монтаж муфт внутренней установки типа 4ПБКВттп (16-25)-1', 'м',
+    table.append(createRow('Приобретение и монтаж муфт внутренней установки типа 4ПБКВттп (16-25)-1', 'шт.',
         purchase_n_montage_INside_sleeve_4.toFixed(2)));
 }
 if (purchase_n_montage_OUTside_sleeve_4) {
