@@ -19,12 +19,7 @@ if (localStorage.getItem('userWorksPageInput')) {
     userWorksPageInput.value = localStorage.getItem('userWorksPageInput');
 }
 
-
-// Опросные
-const orderListsSubmitButton = document.getElementById('submit-order');
-orderListsSubmitButton.onclick = function(e) {
-    e.preventDefault();
-
+let saveData = () => {
     const userInput = document.getElementById('textarea').value;
     localStorage.setItem("userInput", userInput);
 
@@ -33,8 +28,27 @@ orderListsSubmitButton.onclick = function(e) {
 
     const userOrderPageInput = document.getElementById('input_page').value;
     localStorage.setItem("userOrderPageInput", userOrderPageInput);
+
     const userWorksPageInput = document.getElementById('input_page_works').value;
     localStorage.setItem("userWorksPageInput", userWorksPageInput);
+}
+
+// HELP
+const helpButton = document.getElementById('help');
+helpButton.onclick = function(e) {
+    e.preventDefault();
+
+    saveData();
+
+    location.href = 'help.html';
+}
+
+// Опросные
+const orderListsSubmitButton = document.getElementById('submit-order');
+orderListsSubmitButton.onclick = function(e) {
+    e.preventDefault();
+
+    saveData();
 
     location.href = 'order-list.html';
 }
@@ -44,16 +58,7 @@ const shemeBtn = document.getElementById('submit-order-shemes');
 shemeBtn.onclick = function(e) {
     e.preventDefault();
 
-    const userInput = document.getElementById('textarea').value;
-    localStorage.setItem("userInput", userInput);
-
-    let projectData = JSON.stringify(projectDataCollect());
-    localStorage.setItem("projectData", projectData);
-
-    const userOrderPageInput = document.getElementById('input_page').value;
-    localStorage.setItem("userOrderPageInput", userOrderPageInput);
-    const userWorksPageInput = document.getElementById('input_page_works').value;
-    localStorage.setItem("userWorksPageInput", userWorksPageInput);
+    saveData();
 
     location.href = 'sсheme_order_sheet.html';
 }
@@ -63,16 +68,7 @@ const worksSubmitButton = document.getElementById('submit-works');
 worksSubmitButton.onclick = function(e) {
     e.preventDefault();
 
-    const userInput = document.getElementById('textarea').value;
-    localStorage.setItem("userInput", userInput);
-
-    let projectData = JSON.stringify(projectDataCollect());
-    localStorage.setItem("projectData", projectData);
-
-    const userOrderPageInput = document.getElementById('input_page').value;
-    localStorage.setItem("userOrderPageInput", userOrderPageInput);
-    const userWorksPageInput = document.getElementById('input_page_works').value;
-    localStorage.setItem("userWorksPageInput", userWorksPageInput);
+    saveData();
 
     location.href = 'scopeOfWork.html';
 }
@@ -82,17 +78,8 @@ const shemeMainBtn = document.getElementById('submit-works-shemes');
 shemeMainBtn.onclick = function(e) {
     e.preventDefault();
 
-    const userInput = document.getElementById('textarea').value;
-    localStorage.setItem("userInput", userInput);
+    saveData();
 
-    let projectData = JSON.stringify(projectDataCollect());
-    localStorage.setItem("projectData", projectData);
-
-    const userOrderPageInput = document.getElementById('input_page').value;
-    localStorage.setItem("userOrderPageInput", userOrderPageInput);
-    const userWorksPageInput = document.getElementById('input_page_works').value;
-    localStorage.setItem("userWorksPageInput", userWorksPageInput);
-    
     location.href = 'sсheme_works.html';
 }
 
@@ -101,16 +88,7 @@ const estimateBtn = document.getElementById('submit-estimate');
 estimateBtn.onclick = function(e) {
     e.preventDefault();
 
-    const userInput = document.getElementById('textarea').value;
-    localStorage.setItem("userInput", userInput);
+    saveData();
 
-    let projectData = JSON.stringify(projectDataCollect());
-    localStorage.setItem("projectData", projectData);
-
-    const userOrderPageInput = document.getElementById('input_page').value;
-    localStorage.setItem("userOrderPageInput", userOrderPageInput);
-    const userWorksPageInput = document.getElementById('input_page_works').value;
-    localStorage.setItem("userWorksPageInput", userWorksPageInput);
-    
     location.href = 'estimate.html';
 }

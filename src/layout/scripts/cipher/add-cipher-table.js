@@ -211,15 +211,15 @@ for (let i = 0; i < 7; i += 1) {
 	}
 	
 	td9_1.textContent = 'Н. контр.'; //9.1
-	td9_2.textContent = 'Свирский';
+	td9_2.textContent = 'Гуринович';
 
 	if (project.isBossSignature){
 		const bossSignature = document.createElement("IMG");
 		const bossSignature2 = document.createElement("IMG");
 		bossSignature.classList.add('signature_boss');
 		bossSignature2.classList.add('signature_boss2');
-		bossSignature.setAttribute('src', './img/svirski.png');
-		bossSignature2.setAttribute('src', './img/svirski.png');
+		bossSignature.setAttribute('src', './img/gta.png');
+		bossSignature2.setAttribute('src', './img/gta.png');
 		td9_3.append(bossSignature);
 		td10_3.append(bossSignature2);
 	}
@@ -257,7 +257,7 @@ for (let i = 0; i < 7; i += 1) {
 	/*	td9_6.innerHTML = 'РУП "Белэнергосетьпроект"'; //9.6*/
 
 	td10_1.innerHTML = 'Проверил'; //10.1
-	td10_2.innerHTML = 'Свирский'; //10.2
+	td10_2.innerHTML = 'Гуринович'; //10.2
 
 	td11_1.innerHTML = 'Разраб.'; //11.1
 	td11_2.innerHTML = project.nameOfDeveloper.split(' ')[0]; //11.2
@@ -265,10 +265,8 @@ for (let i = 0; i < 7; i += 1) {
 	if (project.isDeveloperSignature){
 		const developerSignature = document.createElement("IMG");
 		developerSignature.classList.add('signature');
-		if (project.nameOfDeveloper === "Крапивина Т. С") {
-			developerSignature.setAttribute('src', './img/krapivina.png');
-		} else if (project.nameOfDeveloper === "Свирский А. Е.") {
-			developerSignature.setAttribute('src', './img/svirski.png');
+		if (project.nameOfDeveloper === "Гуринович Т. А.") {
+			developerSignature.setAttribute('src', './img/gta.png');
 		} else if (project.nameOfDeveloper === "Идельчик Г. Р.") {
 			developerSignature.setAttribute('src', './img/idelchik.png');
 		} else if (project.nameOfDeveloper === "Савченко А. А.") {

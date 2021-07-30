@@ -14,7 +14,7 @@
 	margin: auto;
 }
 header {
-	padding: 15px 0;
+	padding: 14px 0;
 	background: #48D1CC;
 	color:  white;
 	color:  black;  
@@ -39,7 +39,7 @@ header {
 	display: inline;
 }
 .btn-form {
-	width: 36%;
+	width: 37%;
 	padding-right: 5px;
 }
 .main-input {
@@ -47,9 +47,9 @@ header {
 	height: 423px;
 	background: #48D1CC;
 }
-h1 {
+/* h1 {
 	margin-bottom: 10px;
-}
+} */
 .main-form-input {
 	padding: 15px 0;
 	height: 200px;
@@ -57,7 +57,7 @@ h1 {
 }
 .links {
 	padding: 15px 0;
-	height: 269px;
+	height: 284px;
 	background: #AFEEEE;
 }
 a {
@@ -137,6 +137,16 @@ h2 {
 .btn-area-clear:hover {
 	background: #c45210;
 	border: #cf8d12 solid 2px;
+}
+.in-progress:hover {
+	background:	#a86309;
+	border: #a8380c solid 2px;
+}
+.in-progress span{
+	color: white;
+}
+.in-progress:hover span{
+	color: #61230a;
 }
 #textarea{
 	width: 100%;

@@ -139,7 +139,7 @@ tr:nth-child(2n), thead {
 
 /*РАМКА-ШИФР*/
 .сipher_table {
-  /*  width: 100%;*/
+   max-width: 695px;
 	position: absolute;
 	bottom: 0;
 	right: 0;

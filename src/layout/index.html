@@ -14,7 +14,7 @@
     <header>
         <div class="container">
             <form action="help.html">
-                <button type="submit" class="btn">HELP (в разработке)</button>
+                <button type="submit" class="btn" id="help">HELP</button>
             </form>
         </div>
     </header>
@@ -51,7 +51,6 @@
                     </select>
                     <label for="boss">Разработчик:</label>
                     <select name="developer" id="developer">
-                        <option>Свирский А. Е.</option>
                         <option>Мышковец Е. Я.</option>
                         <option>Савченко А. А.</option>
                         <option>Гуринович Т. А.</option>
@@ -84,12 +83,6 @@
 6,50 А,,,СВ-110,ЩУЭ-2-2-1-1-У1
 7,32 А,50 А,,СВ-95,ЩУЭ-2-3-2-1-У1
             </textarea>
-                <!--
-    12,32 А,К,,СВ-95,ЩУЭ-2-1-1-1-У1
-    15,32 А,,,СВ-110,ЩУЭ-2-1-1-1-У1
-    137,32 А,,,СВ-95,ЩУЭ-2-1-1-1-У1
-    -->
-                <!-- <input type="submit" id="button" value="ВНЕСТИ ДАННЫЕ" class="btn btn-area"> -->
             </form>
 
         </div>
@@ -132,30 +125,34 @@
                         <button class="btn btn-small" id="submit-estimate" type="submit">Задание в ОСиОС
                             (объёмы)</button>
                     </form>
-                    <form class="btn-form">
-                        <button class="btn btn-small" id="submit-specification" type="submit">спецификация (в
-                            разработке)</button>
+                    <!-- <form class="btn-form"> -->
+                    <form class="btn-form" action="https://htmlacademy.ru/">
+                        <button class="btn btn-small in-progress" id="submit-specification" type="submit">
+                            спецификация <span>(в разработке)</span>
+                        </button>
                     </form>
                 </div>
                 <div class="btn-container">
-                    <form class="btn-form">
-                        <button class="btn btn-big" id="submit-estimate" type="submit">Задание в ОСиОС (ПНР) (в
-                            разработке)</button>
+                    <!-- <form class="btn-form"> -->
+                    <form class="btn-form" action="https://www.codecademy.com/">
+                        <button class="btn btn-big in-progress" id="submit-estimate" type="submit">
+                            Задание в ОСиОС (ПНР) <span>(в разработке)</span>
+                        </button>
                     </form>
-                    <form class="btn-form">
-                        <button class="btn btn-big" id="submit-specification" type="submit">Ведомости ПНР (-103 часть
-                            проекта) (в разработке)</button>
+                    <!-- <form class="btn-form"> -->
+                    <form class="btn-form" action="https://www.freecodecamp.org/">
+                        <button class="btn btn-big in-progress" id="submit-specification" type="submit">Ведомости ПНР
+                            (-103 часть
+                            проекта) <span>(в разработке)</span>
+                        </button>
                     </form>
                 </div>
 
-                <p style="text-align: center; font-size: 14px;">&copy;
-                    <!-- Copyright--> 2019 Svirski Anton</p>
+                <p style="text-align: center; font-size: 14px;">
+                    &copy; 2019 Svirski Anton</p>
             </div>
 
             <div id="root"></div>
-
-            <!--   <img src="./img/music.svg" alt="#"> -->
-            <!-- <a href="category.html">category</a> -->
 </body>
 
 </html>

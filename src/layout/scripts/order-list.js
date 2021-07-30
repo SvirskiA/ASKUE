@@ -16,11 +16,6 @@ let userInput = localStorage.getItem("userInput");
 userInput = mainObjectCollect(userInput);
 console.log(userInput);
 
-// if (localStorage.getItem('userPageInput')) {
-//   const userPageInput = document.getElementById('input_page');
-//   userPageInput.value = localStorage.getItem('userPageInput');
-// }
-
 let projectData = JSON.parse(localStorage.getItem("projectData"));
 
 console.log(projectData);
@@ -50,19 +45,45 @@ arrCounterBreakers.sort((a, b) => {
 console.log(arrCounterBreakers);
 addBreakersChoise(arrCounterBreakers);
 
+let savedCounter1fValue = localStorage.getItem("counter1fValue");
+let counter1f = document.getElementById('counter-1f');
+if (counter1f.value) {
+  counter1f.value = savedCounter1fValue;
+}
+
+let savedCounter3fValue = localStorage.getItem("counter3fValue");
+let counter3f = document.getElementById('counter-3f');
+if (counter3f.value) {
+  counter3f.value = savedCounter3fValue;
+}
+
+let toMainPageBtn = document.getElementById('to-main-page');
+toMainPageBtn.onclick = function (e) {
+  e.preventDefault();
+  // сохранить инпут счетчиков
+  let counter1fValue = document.getElementById('counter-1f').value;
+  localStorage.setItem("counter1fValue", counter1fValue);
+  let counter3fValue = document.getElementById('counter-3f').value;
+  localStorage.setItem("counter3fValue", counter3fValue);
+
+  location.href = 'index.html';
+}
+
 let getOrderListsButton = document.getElementById('get-order-lists');
 
 getOrderListsButton.onclick = function (e) {
   e.preventDefault();
 
-  // const userPageInput = document.getElementById('input_page').value;
-  // localStorage.setItem("userPageInput", userPageInput);
-
   const countersAndBreakersWrapper = document.getElementById('counters_n_breakers_container');
   countersAndBreakersWrapper.classList.add('hide_counters_n_breakers_container');
 
-  for (let i = 0; i < userInput.length; i += 1) {
+  // сохранить инпут счетчиков
+  let counter1fValue = document.getElementById('counter-1f').value;
+  localStorage.setItem("counter1fValue", counter1fValue);
+  let counter3fValue = document.getElementById('counter-3f').value;
+  localStorage.setItem("counter3fValue", counter3fValue);
 
+  for (let i = 0; i < userInput.length; i += 1) {
     // add main table
     const infoTableWrapper = document.getElementById('info_table_wrapper');
     infoTableWrapper.classList.add('show_info_table_wrapper');
@@ -95,17 +116,18 @@ getOrderListsButton.onclick = function (e) {
     a4div_frame.append(createOrderTable(i));
     // add note in wrapper
     const note = document.createElement("P");
-	  note.classList.add('note');
-	  a4div_frame.append(note);
+    note.classList.add('note');
+    a4div_frame.append(note);
     note.textContent = 'Дополнение: Щиток выносного учета должен соответствовать требованиям СТП 33243.20.262-17.';
-    
+
     // add cipher in wrapper
-    a4div_frame.append(addCipherTable(projectData,'290', 'order', userInput[i], i, userInput));
+    a4div_frame.append(addCipherTable(projectData, '290', 'order', userInput[i], i, userInput));
     // add aside frame in wrapper
     a4div_frame.append(addAsideTable());
 
     a4div.append(addFormat('A4'));
   }
+
   for (let i = 0; i < userInput.length; i += 1) {
     fillOrderTable(userInput[i], i, arrCounterBreakers);
   }
@@ -113,15 +135,3 @@ getOrderListsButton.onclick = function (e) {
   // add counters sum
   addSumSem(userInput);
 }
-
-
-// const shemeBtn = document.getElementById('sсheme_order_sheet__wrapper');
-
-// shemeBtn.onclick = function(e) {
-//     e.preventDefault();
-
-//     const userPageInput = document.getElementById('input_page').value;
-//     localStorage.setItem("userPageInput", userPageInput);
-    
-//     location.href = 'sсheme_order_sheet.html';
-// }
